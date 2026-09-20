@@ -5,81 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — Note Builder</title>
 <style>
-  :root {
-    --ink: #1c1c1a;
-    --paper: #fbfaf7;
-    --rule: #d8d5cc;
-    --accent: #2f5d4f;
-    --muted: #6b6a63;
-  }
+  :root { --ink:#1c1c1a; --paper:#fbfaf7; --rule:#d8d5cc; --accent:#2f5d4f; --muted:#6b6a63; }
   * { box-sizing: border-box; }
-  html, body {
-    margin: 0;
-    padding: 0;
-    background: var(--paper);
-    color: var(--ink);
-  }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    padding: 3rem 1.5rem 5rem;
-  }
-  main {
-    max-width: 640px;
-    margin: 0 auto;
-  }
-  header {
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 1.5rem;
-    margin-bottom: 2.25rem;
-  }
-  .publisher {
-    font-size: 0.8rem;
-    letter-spacing: 0.02em;
-    color: var(--accent);
-    margin: 0 0 0.6rem;
-  }
-  h1 {
-    font-size: 1.7rem;
-    margin: 0 0 0.5rem;
-    font-weight: 600;
-  }
-  .effective {
-    font-size: 0.85rem;
-    color: var(--muted);
-    margin: 0;
-  }
-  h2 {
-    font-size: 1.02rem;
-    font-weight: 600;
-    margin: 2.1rem 0 0.5rem;
-  }
-  p {
-    font-size: 0.95rem;
-    margin: 0 0 0.9rem;
-    max-width: 60ch;
-  }
-  .lede {
-    font-size: 1rem;
-    color: var(--ink);
-  }
-  .contact {
-    margin-top: 2.6rem;
-    padding-top: 1.6rem;
-    border-top: 1px solid var(--rule);
-    font-size: 0.9rem;
-    color: var(--muted);
-  }
-  .contact a {
-    color: var(--accent);
-  }
-  footer {
-    max-width: 640px;
-    margin: 0 auto;
-    padding-top: 2.5rem;
-    font-size: 0.78rem;
-    color: var(--muted);
-  }
+  html, body { margin:0; padding:0; background:var(--paper); color:var(--ink); }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; line-height:1.6; padding:3rem 1.5rem 5rem; }
+  main { max-width:640px; margin:0 auto; }
+  header { border-bottom:1px solid var(--rule); padding-bottom:1.5rem; margin-bottom:2.25rem; }
+  .publisher { font-size:.8rem; letter-spacing:.02em; color:var(--accent); margin:0 0 .6rem; }
+  h1 { font-size:1.7rem; margin:0 0 .5rem; font-weight:600; }
+  .effective { font-size:.85rem; color:var(--muted); margin:0; }
+  h2 { font-size:1.02rem; font-weight:600; margin:2.1rem 0 .5rem; }
+  p { font-size:.95rem; margin:0 0 .9rem; max-width:60ch; }
+  .lede { font-size:1rem; color:var(--ink); }
+  .contact { margin-top:2.6rem; padding-top:1.6rem; border-top:1px solid var(--rule); font-size:.9rem; color:var(--muted); }
+  .contact a { color:var(--accent); }
+  footer { max-width:640px; margin:0 auto; padding-top:2.5rem; font-size:.78rem; color:var(--muted); }
 </style>
 </head>
 <body>
@@ -87,34 +27,27 @@
   <header>
     <p class="publisher">Essential Software</p>
     <h1>Privacy Policy</h1>
-    <p class="effective">Effective 19 September 2026</p>
+    <p class="effective">Effective 20 September 2026</p>
   </header>
 
   <p class="lede"><strong>Note Builder</strong> is published by Essential Software. This policy describes what data the app stores, where it lives, and what leaves your device.</p>
 
   <h2>On-device storage</h2>
   <p>All pages, drafts, images, favourites, preferences, and UI state are stored locally on your device. If you sign in with Google, your notes are additionally backed up to Essential Software's servers — see below.</p>
-
   <h2>Google sign-in &amp; sync</h2>
   <p>Signing in is optional. It's handled by Google — Essential Software never sees your Google password. Essential Software receives your Google account identifier and email address, and stores them along with a session token so you stay signed in. While signed in, your notes (including embedded images) are backed up to Essential Software's servers so they can be restored on another device, and your Pro purchase (if any) and any ad view-credit balance are linked to your account so they carry over too. Signing out stops further syncing but does not delete the backup already stored — sign back in to pick it up again. You can delete your account at any time by tapping the account icon and choosing Delete account under Show more. Doing so signs you out and schedules everything stored with it (synced notes, published pages, running ads, and any unspent ad view-credit balance) for permanent removal after 30 days. Signing back in with the same Google account during that window cancels the deletion and restores full access.</p>
-
   <h2>Publishing a page</h2>
   <p>Publishing is optional — it only happens when you tap Publish. Your page's content and the address you choose are sent to Essential Software and stored so the page can be served at a public link. Anyone with that link can view the page. Essential Software also gives you a private token for that page. It's stored on your device, not kept as-is on Essential Software's side — only a scrambled version of it is kept there, just enough to confirm it matches when you send it back to update or unpublish. Updating a published page sends the new content the same way. Unpublishing takes it down. A copy may be kept for up to 30 days afterward in case of an abuse report or takedown request, then deleted.</p>
-
   <h2>Publishing as an ad</h2>
-  <p>From the Publish sheet's "Publish as Ad" tab, you can additionally register an already-published page to run as an ad, shown to other people using this app as a starting template when they tap Create — not only to people who have the page's link, which is how a regular published page works. Running an ad requires signing in. Buying views uses Google Play Billing; Essential Software receives the purchased product and confirmation of the purchase (not your payment details, which Google handles directly) and credits the corresponding number of views to your account. Essential Software also stores how many views an ad has used and its current status (running, used up, or taken down). Unpublishing an ad removes it from Create immediately and forfeits any views it had left — that balance is not restored to your account. The underlying published page and its normal link are unaffected by unpublishing an ad; taking the page itself down is still done separately from the Publish to Web tab. See "External images &amp; embeds" below for how images inside an ad are fetched — ads are additionally restricted to images from Wikipedia or Wikimedia Commons.</p>
-
+  <p>From the Publish sheet's "Publish as Ad" tab, you can additionally register an already-published page to run as an ad, shown to other people using this app as a starting template when they tap Create — not only to people who have the page's link, which is how a regular published page works. Running an ad requires signing in. Buying views uses Google Play Billing; Essential Software receives the purchased product and confirmation of the purchase (not your payment details, which Google handles directly) and credits the corresponding number of views to your account. Essential Software also stores how many views an ad has used and its current status (running, used up, or taken down). Unpublishing an ad removes it from Create immediately and forfeits any views it had left — that balance is not restored to your account. The underlying published page and its normal link are unaffected by unpublishing an ad; taking the page itself down is still done separately from the Publish to Web tab. See "External images &amp; embeds" below for how images, video, and social-post embeds inside an ad are fetched — ads are additionally restricted to images from Wikipedia or Wikimedia Commons, and to video/social embeds added through the editor's own tools (YouTube, Vimeo, Instagram, Spotify, or SoundCloud).</p>
   <h2>Reporting a published page</h2>
   <p>Anyone can report a published page from its public link. Reporting checks the reporter's IP address for about a minute, just to stop spam, then discards it — it's never stored as part of the report itself. Essential Software keeps only the reason and details submitted. Essential Software keeps every report on file so it can be reviewed. Reports of child sexual abuse material are specifically preserved, not deleted, because that material must be kept and passed to the proper authority.</p>
   <p>This applies the same way to pages currently running as ads — an ad and its published page are the exact same thing at the exact same web address, so there's only one way to report either: go to that page's address and use the report link there. There's no separate process for ads.</p>
   <p>Right now, the app doesn't show you that address while an ad appears as a starting point on the Create screen. To find it: without adding anything new to it, save the ad and open the Publish sheet for that note — it will automatically fill in the ad's own web address for you. Open that address in a browser and you'll see the report link.</p>
-
   <h2>External images &amp; embeds</h2>
-  <p>Images embedded in a page via URL are fetched directly from their source when the page is built. YouTube embeds load directly from YouTube, and Instagram post embeds load directly from Instagram. Essential Software has no involvement with these third-party hosts. A page published as an ad is additionally restricted to images hotlinked from Wikipedia or Wikimedia Commons, and cannot contain images uploaded from your device — this is checked automatically before an ad can go live or be updated.</p>
-
+  <p>Images embedded in a page via URL are fetched directly from their source when the page is built. YouTube and Vimeo embeds load directly from those services, and Instagram, Spotify, and SoundCloud embeds load directly from them. Essential Software has no involvement with these third-party hosts. A page published as an ad is additionally restricted to images hotlinked from Wikipedia or Wikimedia Commons, and cannot contain images uploaded from your device — this is checked automatically before an ad can go live or be updated.</p>
   <h2>Linked pages</h2>
   <p>This section covers links inside the app. Tapping a link in a page shows its address in a sheet with a copy option. The app does not open, load, or navigate to the linked page — nothing is fetched, and Essential Software has no visibility into what links a page contains. A published page works differently: it's a plain web page viewed in a browser, so links inside it are ordinary clickable links that open like any other link on the web.</p>
-
   <h2>Analytics</h2>
   <p>Essential Software does not collect analytics, telemetry, or crash reports from this app.</p>
 
