@@ -24,9 +24,15 @@
   p { font-size:.95rem; margin:0 0 .9rem; max-width:60ch; }
   em { color:var(--muted); font-size:.85rem; }
   a { color:var(--accent); }
-  .fab { position:fixed; right:1.1rem; bottom:calc(1.1rem + env(safe-area-inset-bottom, 0px)); display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 1.15rem; border-radius:999px; background:var(--accent); color:#fff; font-size:.9rem; font-weight:600; text-decoration:none; box-shadow:0 2px 6px rgba(28,28,26,.18), 0 6px 16px rgba(28,28,26,.16); -webkit-tap-highlight-color:transparent; }
-  .fab:active { transform:scale(.97); }
-  .fab svg { flex:none; }
+  /* [2026-11-07 10:49 | terms-fab-top] changed: the floating button is now one compact capsule: a small up arrow (shows after scrolling) joined to the Privacy / Terms jump. */
+  .fabs { position:fixed; right:1.1rem; bottom:calc(1.1rem + env(safe-area-inset-bottom, 0px)); display:inline-flex; align-items:stretch; border-radius:999px; background:var(--accent); color:#fff; overflow:hidden; box-shadow:0 2px 6px rgba(28,28,26,.18), 0 6px 16px rgba(28,28,26,.16); -webkit-tap-highlight-color:transparent; }
+  .fab, .fab-top { display:inline-flex; align-items:center; color:#fff; text-decoration:none; font-size:.9rem; font-weight:600; -webkit-tap-highlight-color:transparent; }
+  .fab { gap:.5rem; padding:.8rem 1.15rem; }
+  .fab-top { padding:.8rem .8rem .8rem 1rem; border-right:1px solid rgba(255,255,255,.35); }
+  .fab-top[hidden] { display:none; }
+  .fab:focus-visible, .fab-top:focus-visible { outline:2px solid #fff; outline-offset:-4px; }
+  .fab:active, .fab-top:active { background:rgba(0,0,0,.14); }
+  .fab svg, .fab-top svg { flex:none; }
 </style>
 </head>
 <body>
@@ -163,12 +169,13 @@
       <p>Questions about this policy? We're happy to help at <a href="mailto:essentialsoftware.support@gmail.com">essentialsoftware.support@gmail.com</a>.</p>
 
   <h2 class="part" id="terms">Terms of Service</h2>
-      <p><em>Effective 3 November 2026</em></p>
+      <p><em>Effective 7 November 2026</em></p>
       <p>Welcome to <strong>Bluebook</strong>! It&rsquo;s published by Essential Software (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;). By using it, you agree to these terms, which are here to keep the app fair and safe for everyone. We've written them in plain language.</p>
       <h2>Who Can Use Bluebook</h2>
       <p>You need to be at least 13 to use Bluebook, or older if the rules where you live say so. If you're under 18, please read these terms with a parent or guardian and make sure they're OK with you using the app.</p>
       <h2>Responsible Use</h2>
       <p>Please use Bluebook kindly and follow the law. You agree to use it only for things that are legal, and not to create, store, or export content that is illegal, harmful, threatening, abusive, untrue and damaging to someone's reputation, or that breaks someone else's rights. This applies with extra weight to anything you publish (see below).</p>
+      <p>Some things aren't allowed anywhere in Bluebook. Please don't publish, share or send nudity or sexual content, or real photos or videos that show graphic violence. This covers published pages, stories, comments, team chats (including images and voice messages) and profile pictures. If we find something like this, or someone reports it and we agree, we may remove it and suspend the account that posted it.</p>
       <h2>Your Content</h2>
       <p>Pages you build are stored on your device. If you sign in with Google, they're also backed up to our servers so you can restore them on another device. Your "All my notes" switches from Settings are backed up the same way. Without an account, your content lives only on your device: we have no copy and can't recover it if it's lost. Signing in, or keeping your own backups, is how you protect it.</p>
       <h2>Your Account</h2>
@@ -237,21 +244,24 @@
       <h2>Contact</h2>
       <p>Questions about these terms? We're happy to help at <a href="mailto:essentialsoftware.support@gmail.com">essentialsoftware.support@gmail.com</a>.</p>
 </main>
-<a class="fab" id="fab" href="#terms" aria-label="Go to Terms of Service"><span id="fab-label">Terms of Service</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+<!-- [2026-11-07 10:49 | terms-fab-top] Floating capsule: Back to top (after scrolling) + the Privacy / Terms jump. -->
+<div class="fabs"><a class="fab-top" id="fab-top" href="#top" aria-label="Back to top" hidden><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4"/></svg></a><a class="fab" id="fab" href="#terms" aria-label="Go to Terms"><span id="fab-label">Terms</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
 <script>
 (function () {
-  var fab = document.getElementById('fab'), label = document.getElementById('fab-label'),
+  var fab = document.getElementById('fab'), top = document.getElementById('fab-top'), label = document.getElementById('fab-label'),
       terms = document.getElementById('terms'), inTerms = null, queued = false;
   function update() {
     queued = false;
+    top.hidden = window.scrollY < window.innerHeight * 0.6;
     var atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
     var now = terms.getBoundingClientRect().top <= window.innerHeight * 0.35 || atEnd;
     if (now === inTerms) return;
     inTerms = now;
     fab.href = now ? '#privacy' : '#terms';
-    label.textContent = now ? 'Privacy Policy' : 'Terms of Service';
+    label.textContent = now ? 'Privacy' : 'Terms';
     fab.setAttribute('aria-label', 'Go to ' + label.textContent);
   }
+  top.addEventListener('click', function (e) { e.preventDefault(); window.scrollTo({ top: 0 }); });
   function queue() { if (!queued) { queued = true; requestAnimationFrame(update); } }
   window.addEventListener('scroll', queue, { passive: true });
   window.addEventListener('resize', queue);
