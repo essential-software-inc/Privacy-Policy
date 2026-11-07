@@ -221,4 +221,42 @@
       <p>In Settings, "All my notes" gives you four shortcuts that change all your published pages at once: "Always show in stories", "Always show comments", "Hide comments on all pages" and "Disable comments on all pages". They only work when you're signed in. Turning one on changes every page you've already published and every page you publish after that. Turning one off just stops it from changing pages. It doesn't undo anything, so your pages keep their current settings until you change them. "Always show comments" and "Hide comments on all pages" are opposites, so turning one on turns the other off. If you change one page's own switches in its Publish sheet later, that page's choice wins.</p>
       <p>These shortcuts are saved with your account and backed up with your notes, so they follow you to your other devices. When one is on, it's the same as tapping that switch yourself on each page, so everything else in these terms still applies. You're responsible for what shows up in stories and comments on all of your pages, including older ones, and the Responsible Use section applies. Before you turn on "Always show in stories", remember that it puts every page you've published (and every new one) in front of other people using the app, not only people who have the link. "Disable comments on all pages" means visitors can't add new comments or replies. They'll see a note that you turned them off, and the comments already there stay. We can still remove or pause pages or stories for the reasons in these terms, even when one of these shortcuts is on.</p>
       <h2>Ad Access &amp; Invites</h2>
-      <p>Bigger ad packages are earned, not only bought. Everyone who's signed in can use the 1,000-view package. Larger packages, and running more ads at once, unlock as your account grows in the app. We look at subscribers, published notes, likes you've received, likes you give to other notes, accounts you subscribe to, days you've been active, stories, and friends you've invited. Every running ad also needs at least five published notes behind it. The Publish as Ad tab shows your progress towards each requirement. We may change the requirements o
+      <p>Bigger ad packages are earned, not only bought. Everyone who's signed in can use the 1,000-view package. Larger packages, and running more ads at once, unlock as your account grows in the app. We look at subscribers, published notes, likes you've received, likes you give to other notes, accounts you subscribe to, days you've been active, stories, and friends you've invited. Every running ad also needs at least five published notes behind it. The Publish as Ad tab shows your progress towards each requirement. We may change the requirements or packages in the future, but ads that are already running aren't affected. A strike (see Reports, Alerts &amp; Suspension) keeps larger packages locked until it expires after 60 days. One strike limits you to the 5,000-view package, and two or more limit you to the 1,000-view package. A limit only stops new ads from starting, and you'll get an alert when it lifts. Views you bought for a package that is limited or still locked stay in your balance until you can use them.</p>
+      <p>Every signed-in account has an invite code it can share. A new account can add one friend's code, once, in its first 14 days. You can't use your own code, and two accounts can't invite each other. When someone adds your code, you get an alert, and they can choose to subscribe to you at the same time (they're asked first). An invite counts towards your ad access once your friend has published a note and been active on at least two days. For packages from 5,000 views up, each invite that counts is worth three subscribers, for up to five invites. When an invite counts, we also add 100 free views to your balance, for up to five friends. Free views work like any other views in your balance: you can put them on any of your ads from the Publish as Ad tab without buying a package, but they can't be cashed out or handed to someone else. Your friend doesn't get anything. If we cancel an invite because of abuse, we take its free views back out of your balance, and return them if we restore it. Please only invite real people. Making or using extra accounts (or asking others to) to push up invites, subscribers, likes or any other number used here isn't allowed. If that happens, we may stop counting invites or any of these numbers, limit your packages, or suspend accounts. An invite also stops counting while the invited account is suspended or being deleted, and counts again if that ends.</p>
+      <h2>Purchases &amp; Eligibility</h2>
+      <p>You can buy a view package for a particular note when you publish it as an ad, or add views to your balance from Settings to put on any of your ads later. Views in your balance aren't assigned to a note until you use them.</p>
+      <p>All buying of view packages and page space packs goes through Google Play Billing (RevenueCat handles it for us). Any age or account requirements for buying are set and enforced by Google Play, not by us. By buying a view package or a page space pack, you confirm that Google Play's own terms allow you to make purchases on the account you're using.</p>
+      <h2>Third-Party Content</h2>
+      <p>Images, video, and audio you embed by URL are loaded straight from the source you give us. You're responsible for having the right to use anything you embed. The same goes for voice notes you record: they're your responsibility, and you need permission from anyone whose voice is in them. Images in an ad can't be uploaded from your device, as described above. You're still responsible for having the right to use whatever you include, including images you link from other websites.</p>
+      <h2>No Promises &amp; Limits on Our Responsibility</h2>
+      <p>We work hard to make Bluebook good, but we can't promise it'll be perfect. It's provided "as is" and "as available", which means we don't promise it'll always work, be free of bugs, or never lose anything. Please keep your own backups of notes that matter to you. As far as the law allows, we're not responsible for knock-on losses, like lost notes, lost data, lost profits or lost chances, or for anything other people post, publish, comment or do. Some places don't allow these limits, so they only apply as far as the law lets them, and nothing here limits anything the law says we can't limit.</p>
+      <h2>The Fine Print</h2>
+      <p>These terms and the Privacy Policy are the whole agreement between you and us about Bluebook. If part of these terms can't be enforced, the rest still counts. If we don't act on something right away, it doesn't mean we've given up the right to later. We may hand over our rights and duties under these terms to someone else, for example if Bluebook is sold or taken over by another company. You can't do that without our OK.</p>
+      <h2>Changes to These Terms</h2>
+      <p>We may update these terms from time to time. If you keep using the app after changes are posted, you're accepting the revised terms.</p>
+      <h2>Contact</h2>
+      <p>Questions about these terms? We're happy to help at <a href="mailto:essentialsoftware.support@gmail.com">essentialsoftware.support@gmail.com</a>.</p>
+</main>
+<a class="fab" id="fab" href="#terms" aria-label="Go to Terms of Service"><span id="fab-label">Terms of Service</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+<script>
+(function () {
+  var fab = document.getElementById('fab'), label = document.getElementById('fab-label'),
+      terms = document.getElementById('terms'), inTerms = null, queued = false;
+  function update() {
+    queued = false;
+    var atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    var now = terms.getBoundingClientRect().top <= window.innerHeight * 0.35 || atEnd;
+    if (now === inTerms) return;
+    inTerms = now;
+    fab.href = now ? '#privacy' : '#terms';
+    label.textContent = now ? 'Privacy Policy' : 'Terms of Service';
+    fab.setAttribute('aria-label', 'Go to ' + label.textContent);
+  }
+  function queue() { if (!queued) { queued = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', queue, { passive: true });
+  window.addEventListener('resize', queue);
+  update();
+})();
+</script>
+</body>
+</html>
